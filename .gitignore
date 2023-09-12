@@ -1,0 +1,5 @@
+DEV_front/*
+devENV/*
+__pycache__/*
+mock_data.py
+.env

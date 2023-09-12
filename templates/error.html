@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block title %} Error {% endblock %} {% block
+content %}
+<div
+  class="container mt-5 p-5"
+  style="background-color: white; border-radius: 10px"
+>
+  <div class="row d-flex justify-content-center mt-5">
+    <img
+      src="{{url_for('static',filename='cross.svg')}}"
+      style="max-width: 192px"
+    />
+  </div>
+  <div class="row text-center mt-5 heading-font">
+    <h1 class="fw-bold" style="color: #ff0000">
+      Maybe you forget to include place in your message?
+    </h1>
+    <a class="btn btn-primary mt-3" href="/"> Try again </a>
+  </div>
+</div>
+{% endblock %}

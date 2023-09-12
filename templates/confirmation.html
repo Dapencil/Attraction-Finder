@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title %} Conformation {% endblock %} {% block
+content %}
+<div
+  class="container mt-5 p-5"
+  style="border-radius: 10px; background-color: white"
+>
+  <form action="/getAtts" method="post">
+    <h5>Place</h5>
+    <p>{{place}}</p>
+    <h5>Description</h5>
+    <p>{{description}}</p>
+    <h5>Season</h5>
+    <p>{{season}}</p>
+    <input name="place" value="{{place}}" hidden>
+    <input name="description" value="{{description}}" hidden>
+    <input name="season" value="{{season}}" hidden>
+    <button class="btn btn-primary" type="submit"> Sure! </a> 
+  </form>
+  <form action="/retry" method="post">
+    <input name="place" value="{{place}}" hidden>
+    <input name="description" value="{{description}}" hidden>
+    <input name="season" value="{{season}}" hidden>
+    <input name="user_msg" value="{{user_msg}}" hidden>
+    <button class="btn btn-danger" type="submit" >Not quite yet</button>
+  </form>
+  
+</div>
+{% endblock %}

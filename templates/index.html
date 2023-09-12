@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %} Home {% endblock %} {% block content
+%}
+<div
+  class="container mt-5 p-5"
+  style="background-color: white; border-radius: 10px"
+>
+  <form action="/confirm" method="post">
+    <div class="mb-3">
+      <h3>Attraction Finder 😎</h3>
+      <p><b>Find a personal attraction within the text!</b></p>
+      <textarea
+        class="form-control"
+        name="user-text"
+        rows="10"
+        placeholder="Simply tell me where you want to travel and what kind of experience you want to gain.
+Ex. I'd like to go mountain running in Chiang Mai during the winter."
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}
