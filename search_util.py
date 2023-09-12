@@ -21,6 +21,8 @@ class SearchUtil:
         results = search.get_dict()
         print("Search Finished")
         if "error" not in results:
+            if "images_results" not in results:
+                return []
             for image in results["images_results"]:
                 if image["original"] not in check_list:
                     image_results.append({
