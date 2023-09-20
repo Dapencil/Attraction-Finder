@@ -26,11 +26,6 @@ def home_page():
 def confirm_page():
     user_text = request.form.get("user-text")
     specification = agent.extract_info(user_text)
-    # specification = {
-    #     'place' : 'Chiang Mai',
-    #     'description' : 'Natural-based tour',
-    #     'season' : 'Winter'
-    # }
     if specification['place'] == None:
         return render_template("error.html")
     return render_template("confirmation.html",
@@ -73,7 +68,7 @@ def retry_extract():
 def get_list_att():
     global cur_db
     specification_json = json.dumps(request.form)
-    att_list = agent.find_atts(spec_msg=specification_json)
+    att_list = agent.find_atts_chain(spec_msg=specification_json)
     for index in range(len(att_list)):
         print('Search Image:',index)
         att = att_list[index]
